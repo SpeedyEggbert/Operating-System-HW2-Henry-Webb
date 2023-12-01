@@ -15,4 +15,4 @@ Output of the program will be put in the same location as banker.cpp so it's bes
 ## What it does
 
 The program reads off text file all the info about the state of five diffrent "processes" and the "memory".
-Using this data it uses the bankers algoritem to find the safe sequence, if it exists and outputs it into a text file called "output.txt"
+Using this data it uses the bankers algoritem to find the safe sequence, if it exists and outputs it out in the terminal

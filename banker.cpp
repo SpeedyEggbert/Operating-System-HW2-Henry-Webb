@@ -125,18 +125,16 @@ bool operator<=(const Process& p, const Memory& m){
 }
 
 //Outputs safe sequence to file named "output.txt"
-void createOutput(int safeSequence[]){
-    ofstream file("output.txt");
+void outputSequence(int safeSequence[]){
+    
 
-    file << "The found safe sequence is: ";
+    cout << "The found safe sequence is: ";
 
     for(int i = 0; i < 5; ++i){
-        file << "P" << safeSequence[i] << " ";
+        cout << "P" << safeSequence[i] << " ";
     }
 
-    file << endl;
-
-    file.close();
+    cout << endl;
 }
 
 //Default ctor is used as parser for data 
@@ -216,10 +214,7 @@ int main(){
         }
     }
 
-    //for(int i = 0; i < 5; ++i)
-        //std::cout << safeSequence[i] << " ";
-
-    createOutput(safeSequence);
-
+    outputSequencetput(safeSequence);
+    
     return 0;
 }
