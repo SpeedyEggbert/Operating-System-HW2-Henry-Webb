@@ -89,9 +89,6 @@ Memory::Memory(){
 //Constructor for memeory by sending it avilable memory
 //Any array send MUST be >=3
 Memory::Memory(int mem[]){
-    //if(sizeof(mem) != 3)
-        //assert(1 == 0);
-    
     for(int i = 0; i < 3; ++i)
         available[i] = mem[i];
 }
@@ -149,12 +146,14 @@ Parser::Parser(){
         std::cout << "Unable to open file\n";
         exit(1);
     }
-        int A;
-        int B;
-        int C;
-        int avail[3];
-        int max[3];
 
+    int A;
+    int B;
+    int C;
+    int avail[3];
+    int max[3];
+
+    //Runs five times, reading off a row of 6 numbers split by a comma
     for(int i = 0; i < 5; ++i){
         file >> A;
         avail[0] = A;
@@ -175,16 +174,17 @@ Parser::Parser(){
         pList[i] = Process(avail, max);
     }
 
-        file >> A;
-        avail[0] = A;
-        file >> B;
-        avail[1] = B;
-        file >> C;
-        avail[2] = C;
+    //Final 3 numbers in data.txt will always be memory
+    file >> A;
+    avail[0] = A;
+    file >> B;
+    avail[1] = B;
+    file >> C;
+    avail[2] = C;
 
-        mem = Memory(avail);
+    mem = Memory(avail);
 
-        file.close();  
+    file.close();  
 }
 
 
